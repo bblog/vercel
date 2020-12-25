@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<!-- PC端优先设计 -->
+<!--  iPad   480px~767px-->
+<!-- 正常手机360px~479px -->
+<!-- 小手机    <360px -->
+<!-- index、article的css相同   sentence和mysentence的css相同 -->
+
+<head>
+  <meta charset="UTF-8">
+  <title>文章发布指南</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/base.css" rel="stylesheet">
+  <link href="../css/mobile.css" rel="stylesheet">
+  <link href="../css/details.css" rel="stylesheet">
+  <link href="../css/typora.style.css" rel="stylesheet">
+  <link rel="icon" sizes="any" mask="" href="https://i.loli.net/2020/03/12/C9SY8baEqQklv61.png">
+</head>
+
+	<!-- PC、移动端导航栏和菜单 -->
+	<script src="../../../../public/nav.js"></script>
+<div id="perspective">
+  <div id="container">
+    <!-- 正文，文章列表 -->
+    <main>
+      <header class="title">
+        <h2>文章发布指南</h2>
+      </header>
+      <div class="massage">
+        <div id='write' class=''>
+          <p><span>鉴于本站是在GitHub
+              page上面发布的，所以发布文章都是通过直接写代码文件的形式而不是类似CSDN、博客园等网站有后端的用户界面。因此，书写一个文章发布指南是十分有必要的，有可能让访问者有所启发，最重要的是可以让自己可以在忘记的时候回来查看！</span>
+          </p>
+          <p>&nbsp;</p>
+          <p><span>若有疑问可查看：</span><a href='structure.html'><span>本站代码结构</span></a><span>和</span><a
+              href='timeline.html'><span>更新日志</span></a></p>
+          <hr />
+          <p>&nbsp;</p>
+          <h2 class="contents"><a name="如何发布文章" class="md-header-anchor"></a><span>如何发布文章？</span></h2>
+          <p>
+            <span>显而易见，发布文章其实就是新增一个HTML页面，这里建议直接复制一个同一目录下的HTML文件。不论你是新建还是复制，必须保证页面里面包含文件</span><code>base.js</code><span>、</span><code>base.css</code><span>、</span><code>details.css</code><span>、</span><code>mobile.css</code><span>，它们可以确保你的HTML文件得到最基础的支持。</span>
+          </p>
+          <blockquote>
+            <p>
+              <span>某种程度上来说，</span><code>details.css</code><span>是可以取消的，因为它只定义了最基本的文章头部信息的内容，感觉可以放到</span><code>typora.style.css</code><span>中，但为了日后主题可以更换，所以可以让他独立。</span>
+            </p>
+          </blockquote>
+          <p>
+            <span>最重要的是，你</span><mark><span>必须引入</span><code>typora.style.css</code></mark><span>，它定义了你的文章的几乎所有样式。在没有其他主题之前，你必须要添加它。</span>
+          </p>
+          <p>&nbsp;</p>
+          <h2 class="contents"><a name="json文件的编写" class="md-header-anchor"></a><span>json文件的编写</span></h2>
+          <p><span>编写json文件的目的是让文章得到显示、索引、搜索、推荐等，这会让文章更新到：目录、文章分类、标签、归档等。致于json的格式，直接复制前面的代码即可，值得一提的是，文章中</span><code>&quot;top&quot;:
+              true</code><span>可令文章置顶、</span><code>&quot;recommend&quot;: true</code><span>可以让文章在站长推荐中得到优先显示。</span></p>
+          <blockquote>
+            <p><span>网站会有多个json文件，有的文件尚未得到实现，预期的json文件和功能如下：</span></p>
+          </blockquote>
+          <figure>
+            <table>
+              <thead>
+                <tr>
+                  <th><span>json文件名</span></th>
+                  <th><span>功能</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span>index.json</span></td>
+                  <td><span>存储所有的文章</span></td>
+                </tr>
+                <tr>
+                  <td><span>article.json</span></td>
+                  <td><span>转载的常规文章</span></td>
+                </tr>
+                <tr>
+                  <td><span>myarticle.json</span></td>
+                  <td><span>我的原创文章</span></td>
+                </tr>
+                <tr>
+                  <td><span>sentence.json</span></td>
+                  <td><span>名人名言</span></td>
+                </tr>
+                <tr>
+                  <td><span>mysentence.json</span></td>
+                  <td><span>我的感悟</span></td>
+                </tr>
+                <tr>
+                  <td><span>technology.json</span></td>
+                  <td><span>转载的技术博文（未实现）</span></td>
+                </tr>
+                <tr>
+                  <td><span>mytechnology.json</span></td>
+                  <td><span>我的技术博文（未实现）</span></td>
+                </tr>
+                <tr>
+                  <td><span>home.json</span></td>
+                  <td><span>首页展示的文章（未实现），现在用index.json</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+          <h2 class="contents"><a name="文章内容的书写" class="md-header-anchor"></a><span>文章内容的书写</span></h2>
+          <h3><a name="基本内容的编写" class="md-header-anchor"></a><span>基本内容的编写：</span></h3>
+          <p><span>使用Markdown编辑器Typora编写，几乎和word一样简便，步骤如下：</span></p>
+          <ol>
+            <li><span>引用typora.style.css(前面已经提过)，即</span><code>&lt;link href=&quot;../../css/typora.style.css&quot;
+                rel=&quot;stylesheet&quot;&gt;</code></li>
+            <li>
+              <span>在</span><strong><span>typora</span></strong><span>中编写Markdown文件并导出HTML文件(不需要CSS)，typora的样式详见：</span><a
+                href='../myarticle/other/20201026.html'><span>typora样式参考</span></a></li>
+            <li><span>将导出的HTML文件里面的 </span><code>&lt;div id=&#39;write&#39;&gt;</code><span>放到新建的</span><code>&lt;div
+                class=&quot;massage&quot;&gt;</code><span>里面</span></li>
+            <li><span>保存即可</span></li>
+          </ol>
+          <p><span>更多内容请参考:</span><a href='../myarticle/other/20201026.html'><span>博客将使用Markdown编辑器来编写</span></a></p>
+          <h2 class="contents"><a name="文章目录的添加" class="md-header-anchor"></a><span>文章目录的添加</span></h2>
+          <p>
+            <span>目前，文章目录的添加依赖于是否有文章信息栏的“字数”（</span><code>id=&quot;word&quot;</code><span>）项来决定是否自动生成目录，如果没“字数”（</span><code>id=&quot;word&quot;</code><span>）项，但依然要生成目录，可以调用函数</span><code>addLeftList()</code><span>来添加。</span>
+          </p>
+          <p>
+            <span>目录的条目是通过锚点的方式实现的，添加</span><code>class=&quot;contents&quot;</code><span>会让其在目录栏生成条目，</span><code>data-title-name</code><span>可以用来定义要在目录中显示的内容，如果</span><code>data-title-name</code><span>是未定义的，那么会自动把有</span><code>class=&quot;contents&quot;</code><span>的节点的所有文本作为目录的条目内容。</span>
+          </p>
+          <blockquote>
+            <p>
+              <code>class=&quot;contents&quot;</code><span>的添加是自由的，但是建议添加在</span><code>&lt;h&gt;</code><span>标签里面,最好是</span><code>&lt;h2&gt;</code><span>标签。</span>
+            </p>
+          </blockquote>
+          <h2 class="contents"><a name="更多" class="md-header-anchor"></a><span>更多</span></h2>
+          <h5><a name="每次代码更新后应当编写本站时光轴便于记录网站改动" class="md-header-anchor"></a><span>每次代码更新后应当编写“本站时光轴”，便于记录网站改动。</span>
+          </h5>
+          <h3 class="contents"><a name="待实现的功能" class="md-header-anchor"></a><span>待实现的功能</span></h3>
+          <ul>
+            <li><del><span>图片的显示</span></del><span>（已实现）</span></li>
+            <li><del><span>代码的显示</span></del><span>（已实现，并添加复制功能）</span></li>
+            <li><span>文章添加导语、标签、分类</span></li>
+            <li><del><span>编写文章时一些常用样式</span></del><span>（已通过Typora实现）</span></li>
+            <li><span>文章显示、句子显示模块页数多之后瀑布流的显示</span></li>
+          </ul>
+          <p>&nbsp;</p>
+          <hr />
+          <p><span>了解更多关于本站的信息请进入</span><a href='../about/index.html'><span>关于本站</span></a><span>页面。</span></p>
+        </div>
+      </div>
+    </main>
+    <!-- 底部栏 -->
+    <script src="../../../../public/footer.js"></script>
+  </div>
+</div>
+	<!-- aside可置顶显示 -->
+	<script src="../../../../public/aside.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script>
+  addLeftList()
+</script>
+</body>
+
+</html>

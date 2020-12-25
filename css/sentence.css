@@ -1,0 +1,75 @@
+/* 句子通用
+
+即名人名言、个人感悟通用*/
+
+/* body {
+  background-color: #f6f6f6;
+} */
+
+#columns {
+  column-width: 300px;
+  column-gap: 15px;
+  width: 90%;
+  max-width: 1100px;
+  margin-top: 50px;
+  margin: auto;
+}
+
+ul#columns li {
+  border-radius: 4px;
+  background: #ffffffdb;
+  border: 2px solid #fefefe00;
+  box-shadow: 0 0 40px #dcdbff;
+  margin: 0 2px 15px;
+  padding: 15px;
+  padding-bottom: 10px;
+  transition: opacity .4s ease-in-out;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+ul#columns li img {
+  width: 100%;
+  height: 240px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+ul#columns li p {
+  width: 100%;
+  text-indent: 2em;
+  text-align: justify;
+  padding: 7px 0;
+  font-size: .9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+ul#columns li p:last-child {
+  text-align: right;
+  padding: 12px 0px 0px 0;
+}
+ul#columns li:hover {
+  border: 2px solid #00bcd4;
+}
+
+.blogs {
+  margin-top: 80px;
+  width: 73%;
+  float: right;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  #columns {
+    column-gap: 0px;
+  }
+
+  #columns li {
+    width: 100%;
+  }
+}

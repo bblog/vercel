@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ff6600" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>蒙大明的个人博客</title>
+    <!-- <link rel="icon" sizes="any" mask="" href="https://i.loli.net/2020/03/12/C9SY8baEqQklv61.png"> -->
+    <link rel="icon" sizes="any" mask="" href="https://s3.ax1x.com/2020/11/18/DneSpV.png">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" defer> -->
+    <style>
+        body {
+            background-color: #f4f8fb;
+        }
+
+        .aplayer.aplayer-fixed .aplayer-body {
+            top: 1px;
+            bottom: unset;
+        }
+
+        .aplayer-list {
+            margin-top: 65px;
+            margin-bottom: unset !important;
+        }
+
+        .aplayer.aplayer-narrow .aplayer-body,
+        .aplayer.aplayer-narrow .aplayer-pic {
+            height: 58px;
+            width: 66px;
+        }
+
+        #aplayer {
+            top: 1px;
+            bottom: unset;
+        }
+
+        .aplayer .aplayer-miniswitcher {
+            background: #e6e6e63d;
+        }
+
+        #iframe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            z-index: -1;
+        }
+
+        .aplayer .aplayer-lrc p {
+            font-size: 16px;
+            color: #03A9F4;
+            line-height: 16px !important;
+            height: 16px !important;
+        }
+    </style>
+    <style>
+        .mask {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            transition: all 1s;
+            -webkit-transition: all .2s;
+        }
+
+        .feedback {
+            background-size: 50% 50%;
+            position: fixed;
+            z-index: 111;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            font-size: 24px;
+            text-align: center;
+            color: turquoise;
+            transition-property: width, height;
+            transition-duration: 1s;
+            background-color: white;
+        }
+
+
+        .feedback img {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            width: 50%;
+            height: 50%;
+        }
+
+        .feedback p {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?dfb2e9af2c4ea3536c96e73ddb3dc6b8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+
+
+<body>
+    <div class="mask"></div>
+    <div class="feedback"><img src="">
+        <p></p>
+    </div>
+    <iframe id="iframe" name="iframe_a" frameborder="0" scrolling-X="no"> </iframe>
+    <div id="aplayer"></div>
+    <script>
+        //刷新
+        if (document.location.hash.substring(1).length > 5) { //借助锚点来加载框架的src  substring(1)去除#
+            document.getElementById('iframe').src = document.location.hash.substring(1)
+
+        } else {
+            document.getElementById('iframe').src = "index0.html"
+        }
+        console.log("%cBlue Blog%c\n 蒙大明的博客\n\n  用于发布一些文章！", "font-size:96px;color:#3b3e43",
+            "font-size:12px;color:#4285f4;")
+    </script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" defer></script>
+    <!-- <script src=" https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js" defer></script> -->
+    <!-- <script src="/js/Aplayer.js" defer></script> -->
+    <script id="ribbon" zindex="-1111" alpha="0.2" size="100" src="../../js/ribbon.js" defer></script>
+
+</body>
+
+
+</html>

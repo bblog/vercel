@@ -1,0 +1,248 @@
+@charset "gb2312";
+
+/* ===首页 
+==========精选美文也适用===*/
+article {
+    width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+/* ===========文章列表============== */
+@media screen {
+    .blogs {
+        float: right;
+        width: 70%;
+        margin: 80px 0 0;
+        overflow: hidden;
+
+    }
+
+    .article-list {
+        width: 90%;
+        margin: auto;
+    }
+
+    .blogs .article-list li {
+
+        border: 1px solid #eaeaea00;
+        box-shadow: 0 0 40px #dcdbff;
+        margin-bottom: 10px;
+        overflow: hidden;
+        height: 180px;
+        padding: 16px;
+        position: relative;
+        background: #ffffffdb;
+        visibility: hidden;
+    }
+
+    .blogs .article-list li:hover {
+        /* background-color: rgba(94, 161, 228, 0.16); */
+        border: 1px solid #4fc3f7;
+        box-shadow: 0 0 10px #4fc3f7;
+
+        z-index: 20;
+    }
+
+    h3.blogtitle {
+        line-height: 30px;
+        font-size: 18px;
+        height: 20%;
+        margin: 10px 0;
+    }
+
+    h3.blogtitle a {
+        color: #000;
+    }
+
+    .blogtitle a:hover {
+        color: #6c62ff;
+        text-decoration: underline;
+
+    }
+
+    .bloginfo {
+        text-overflow: ellipsis;
+        height: 40%;
+        overflow: hidden;
+    }
+
+    .blogpic:hover {
+        transform: scale(1.02);
+    }
+
+    .blogpic {
+        height: 100%;
+        overflow: hidden;
+        width: 25%;
+        display: block;
+        float: left;
+        margin-right: 20px;
+        left: 0;
+        top: 0;
+        border-radius: 18%;
+        padding: 1%;
+    }
+
+    .author {
+        height: 20%;
+        width: 70%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        clear: both;
+        margin: 2% 0 0 5%;
+        display: inline-block;
+        color: #838383;
+        font-size: 12px
+    }
+
+    .author span {
+        margin-right: 11%;
+        padding-left: 20px
+    }
+
+    .author span a {
+        color: #096;
+    }
+
+    .author span a:hover {
+        text-decoration: underline
+    }
+
+    .lm {
+        background: url(../images/newsbg01.png) no-repeat left center
+    }
+
+    .dtime {
+        background: url(../images/newsbg02.png) no-repeat left center
+    }
+
+    .blogpic img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        opacity: .95;
+    }
+
+    .bloginfo p {
+        color: #888;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        padding-right: 5%;
+        font-size: 13px;
+        text-align: justify;
+
+    }
+}
+
+/* ================列表结束=============== */
+/* ============================动画=========================== */
+@media screen {
+
+    .lmnav,
+    .category {
+        animation: zoomIn 2s;
+        animation-delay: 0.1s;
+
+    }
+
+}
+
+/* ===============动画区域结束==================== */
+#headerDown {
+    -webkit-animation: bounce 4s 2s infinite alternate;
+    animation: bounce 4s 2s infinite;
+    color: #2196f3;
+    height: 34px;
+    width: 34px;
+    position: absolute;
+    fill: currentColor;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+.top_svg {
+    position: relative;
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    40% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+
+    60% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px)
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    40% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+
+    60% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px)
+    }
+}
+
+.my-name {
+    color: #03a9f4;
+    font-size: 50px;
+    position: absolute;
+    top: 16%;
+    right: 4%;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+    
+.my-name {
+    /* width: 100%; */
+   color: #03a9f4;
+   font-size: 35px;
+   position: absolute;
+   top: unset;
+   right: unset;
+   white-space:nowrap;
+   bottom: 25%;
+   left: 50%;
+   transform: translateX(-50%);
+   margin: 50px auto;
+   cursor: pointer;
+}
+}
